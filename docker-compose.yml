@@ -14,6 +14,7 @@ x-airflow-common:
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
+    - ./scripts:/opt/airflow/dags/scripts
     - ./plugins:/opt/airflow/plugins
     - .:/app
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
@@ -40,6 +41,9 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
+    environment:
+      <<: *airflow-common-env
+      PYTHONPATH: /app
     command: webserver
     ports:
       - 8080:8080
@@ -52,6 +56,9 @@ services:
 
   airflow-scheduler:
     <<: *airflow-common
+    environment:
+      <<: *airflow-common-env
+      PYTHONPATH: "/app"
     command: scheduler
     restart: always
 

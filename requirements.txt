@@ -1,0 +1,6 @@
+apache-airflow
+pandas
+scikit-learn
+joblib
+requests
+python-dotenv

@@ -8,11 +8,11 @@ def train_model():
     Обучает LogisticRegression на dataset/iris_train.csv
     и сохраняет готовую модель в model.pkl
     """
-    df = pd.read_csv('dataset/iris_train.csv')
+    df = pd.read_csv('/app/dataset/iris_train.csv')
     X = df.drop(columns=['target'])
     y = df['target']
     model = LogisticRegression(max_iter=200)
     model.fit(X, y)
-    joblib.dump(model, 'model.pkl')
+    joblib.dump(model, '/app/model.pkl')
     print("Model trained and saved to model.pkl")
 

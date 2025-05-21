@@ -4,3 +4,7 @@ scikit-learn
 joblib
 requests
 python-dotenv
+mlflow
+clearml
+wandb
+numpy

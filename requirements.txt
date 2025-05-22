@@ -1,0 +1,10 @@
+scikit-learn
+apache-airflow
+pandas
+joblib
+requests
+python-dotenv
+mlflow
+clearml
+wandb
+numpy
